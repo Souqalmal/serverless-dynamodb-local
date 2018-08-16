@@ -1,6 +1,6 @@
 {
     "name": "serverless-dynamodb-local-souqalmal",
-    "version": "0.2.30",
+    "version": "0.2.32",
     "engines": {
         "node": ">=4.0"
     },
