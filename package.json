@@ -5,11 +5,11 @@
         "node": ">=4.0"
     },
     "description": "Serverless dynamodb local plugin",
-    "author": "99xtechnology.com",
+    "author": "souqalmal.com",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/99xt/serverless-dynamodb-local"
+        "url": "https://github.com/Souqalmal/serverless-dynamodb-local"
     },
     "keywords": [
         "serverless framework plugin",
