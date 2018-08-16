@@ -12,10 +12,10 @@ before_install:
 
 install:
   - npm install --save-dev serverless-offline 
-  - npm install -g serverless@1.0.0-rc.1
+  - npm install serverless
   - npm install aws-sdk
   - npm install --save dynamodb-doc-client-wrapper
-  - serverless create --template aws-nodejs
+  - ./node_modules/.bin/serverless create --template aws-nodejs
   - cd ..
   - cd ..
   - npm link
