@@ -1,47 +1,52 @@
 language: node_js
 node_js:
-  - '4'
+- '4'
+- '6'
+- '8'
 
 sudo: false
 
 before_install:
-  - cd test
-  - mkdir sample-template
-  - cd sample-template
-  - npm init --yes
+- cd test
+- mkdir sample-template
+- cd sample-template
+- npm init --yes
+- sudo add-apt-repository ppa:openjdk-r/ppa -y
+- sudo apt-get update
+- sudo apt-get install -y g++ make openjdk-8-jdk
 
 install:
-  - npm install --save-dev serverless-offline 
-  - npm install serverless
-  - npm install aws-sdk
-  - npm install --save dynamodb-doc-client-wrapper
-  - ./node_modules/.bin/serverless create --template aws-nodejs
-  - cd ..
-  - cd ..
-  - npm link
-  - cd test/sample-template/node_modules
-  - npm link serverless-dynamodb-local
-  - cd ..
-  - sed -i '18 a plugins:' serverless.yml
-  - sed -i '19 a - serverless-offline' serverless.yml
-  - sed -i '20 a - serverless-dynamodb-local' serverless.yml
-  - cd ..
-  - cd ..
-  - npm install --save-dev mocha
-  - npm install --save-dev should
-  - npm install --save expect
-  - npm install --save request
-  - npm install --save chai
-  - travis_retry npm install
-  - cd test/sample-template
+- npm install --save-dev serverless-offline 
+- npm install serverless
+- npm install aws-sdk
+- npm install --save dynamodb-doc-client-wrapper
+- ./node_modules/.bin/serverless create --template aws-nodejs
+- cd ..
+- cd ..
+- npm link
+- cd test/sample-template/node_modules
+- npm link serverless-dynamodb-local
+- cd ..
+- sed -i '18 a plugins:' serverless.yml
+- sed -i '19 a - serverless-offline' serverless.yml
+- sed -i '20 a - serverless-dynamodb-local' serverless.yml
+- cd ..
+- cd ..
+- npm install --save-dev mocha
+- npm install --save-dev should
+- npm install --save expect
+- npm install --save request
+- npm install --save chai
+- travis_retry npm install
+- cd test/sample-template
 
 before_script:
-  - sls dynamodb install
-  - sls offline start & 
-  - sleep 15
-  - cd .. 
-  - cd ..
-  - npm run test
+- sls dynamodb install
+- sls offline start & 
+- sleep 15
+- cd .. 
+- cd ..
+- npm run test
   
 script:
-  - npm test
+- npm test
