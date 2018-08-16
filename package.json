@@ -1,6 +1,6 @@
 {
     "name": "serverless-dynamodb-local-souqalmal",
-    "version": "0.2.33",
+    "version": "0.2.34",
     "engines": {
         "node": ">=4.0"
     },
@@ -34,7 +34,7 @@
     "dependencies": {
         "aws-sdk": "^2.7.0",
         "bluebird": "^3.4.6",
-        "dynamodb-localhost-souqalmal": "^0.0.6",
+        "dynamodb-localhost-manager": "0.0.2",
         "lodash": "^4.17.0"
     },
     "devDependencies": {

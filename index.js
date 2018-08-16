@@ -2,7 +2,7 @@
 const _ = require("lodash");
 const BbPromise = require("bluebird");
 const AWS = require("aws-sdk");
-const dynamodbLocal = require("dynamodb-localhost-souqalmal");
+const dynamodbLocal = require("dynamodb-localhost-manager");
 const seeder = require("./src/seeder");
 const path = require('path');
 
